@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadates -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+
+    <!-- Page Title -->
+    <title>Sing Up Form</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        id="linear-drawing"
+        src="https://i.pinimg.com/originals/a0/2f/7c/a02f7c8d551eabc0d2ca1be85786bc54.png"
+        alt=""
+      />
+
+      <!-- Header with welcome message and instructions -->
+      <header>
+        <h1>Welcome Friend!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          nulla tempora similique sit enim doloremque porro expedita?
+        </p>
+      </header>
+
+      <!-- Form's start -->
+      <form>
+        <!-- Name field and css of 'input' class -->
+        <div class="input">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+
+        <!-- Email field and css of 'input' class -->
+        <div class="input">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required />
+        </div>
+
+        <!-- Password field and css of 'input' class -->
+        <div class="input">
+          <label for="password"
+            >Password
+            <button type="button" id="show_and_hide">
+              <i id="eye-icon" class="far fa-eye"></i>
+              <span id="btn-text">Show</span>
+            </button></label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            required
+          />
+        </div>
+
+        <!-- Password format instructions -->
+        <ul class="grid-container">
+          <li class="grid-item">8 characters minimun</li>
+          <li class="grid-item">One lowercase character</li>
+          <li class="grid-item">One uppercase character</li>
+          <li class="grid-item">One number</li>
+          <li class="grid-item">One special character</li>
+        </ul>
+
+        <!-- Button to submit the form -->
+        <button id="submit" type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Javascript -->
+    <script src="main.js"></script>
+  </body>
+</html>

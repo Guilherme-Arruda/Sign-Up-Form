@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=STIX+Two+Text&display=swap");
+
+@import "variables";
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+@mixin font($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+body {
+  background-color: $primary-color;
+}
+
+div.container {
+  width: 74vw;
+  height: 100vh;
+  padding: 60px 230px 60px 170px;
+  background-color: $secondary-color;
+  border-left: 8px solid $primary-color;
+
+  img {
+    width: 680px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translate(15%, 20%);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+header {
+  h1 {
+    margin-bottom: 10px;
+    font-family: "STIX Two Text";
+    @include font(45px, 500);
+    &::selection {
+      background-color: $select-color;
+    }
+  }
+
+  p {
+    @include font(16px, 300);
+    &::selection {
+      background-color: $select-color;
+    }
+  }
+}
+
+form {
+  div.input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    label {
+      margin-bottom: 7px;
+      @include font(17px, 400);
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button#show_and_hide {
+        width: 75px;
+        height: 20px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        text-align: end;
+        @include font(17px, 600);
+        cursor: pointer;
+        &:hover {
+          color: $primary-color-hover;
+        }
+      }
+    }
+
+    input {
+      height: 45px;
+      padding: 10px;
+      border: 1px solid $input-border;
+      border-radius: 3px;
+      @include font(17px, 300);
+      color: $input-color;
+      transition: ease-in 0.1s;
+      &:focus {
+        outline: none;
+        border: 2px solid $primary-color;
+      }
+      &::selection {
+        background-color: $select-color;
+      }
+    }
+  }
+
+  button#submit {
+    width: 200px;
+    height: 45px;
+    background-color: $primary-color;
+    border-radius: 3px;
+    @include font(17px, 300);
+    color: $secondary-color;
+    user-select: none;
+    transition: ease-in 0.1s;
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+}
+
+ul.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  @include font(14px, 400);
+
+  li.grid-item {
+    list-style: none;
+    &::before {
+      margin-right: 10px;
+      content: "\2022";
+      @include font(19px, 400);
+      line-height: 17px;
+      color: $primary-color;
+    }
+    &::selection {
+      background-color: $select-color;
+    }
+  }
+}
+
+@media only screen and (min-width: 965px) and (max-width: 1070px) {
+  div.container {
+    padding: 60px 190px 60px 100px;
+    img {
+      width: 600px;
+    }
+  }
+}
+
+@media only screen and (max-width: 965px) {
+  div.container {
+    padding: 60px 170px 60px 100px;
+    img {
+      width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 865px) {
+  header {
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  form {
+    div.input {
+      margin-top: 15px;
+      label {
+        margin-bottom: 5px;
+        font-size: 15px;
+
+        button#show_and_hide {
+          font-size: 15px;
+        }
+      }
+      input {
+        font-size: 15px;
+      }
+    }
+  }
+  ul.grid-container {
+    grid-template-columns: auto;
+    font-size: 12px;
+    li.grid-item {
+      &::before {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  div.container {
+    width: 100vw;
+    padding: 60px;
+    border-right: 8px solid $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  div.container {
+    padding: 20px;
+		border-bottom: 0px;
+		border-top: 0px;
+  }
+
+  header {
+    h1 {
+      font-size: 27px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  form {
+    div.input {
+      label {
+        font-size: 13px;
+
+        button#show_and_hide {
+          font-size: 13px;
+        }
+      }
+      input {
+        font-size: 13px;
+      }
+    }
+    button#submit {
+      width: 100%;
+    }
+  }
+}
